@@ -33,7 +33,7 @@ export const Hero = () => {
           </Button>
           
           <p className="text-sm md:text-base text-text-light max-w-2xl mx-auto">
-            Launching January 2025. We're selecting 5 forward-thinking businesses to receive hands-on AI roadmap guidance before launch.
+            <strong className="font-semibold">Launching January 2025</strong>. We'll select 5 businesses for applications.
           </p>
         </div>
       </div>

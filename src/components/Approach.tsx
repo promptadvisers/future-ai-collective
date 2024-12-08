@@ -7,7 +7,7 @@ export const Approach = () => {
             Our Approach
           </h3>
           <p className="text-xl text-text-light leading-relaxed">
-            This community isn't about theory. It's about applying AI strategies that drive measurable outcomes. 
+            <strong>This community isn't about theory</strong>. It's about applying AI strategies that drive measurable outcomes. 
             Every member contributes real experiences—from successful deployments to lessons learned—and we use 
             that collective intelligence to level each other up.
           </p>
