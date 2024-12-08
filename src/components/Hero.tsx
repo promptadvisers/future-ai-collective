@@ -42,12 +42,9 @@ export const Hero = () => {
             <p className="text-xl md:text-2xl font-semibold text-primary">
               Launching January 2025
             </p>
-            <div className="max-w-2xl mx-auto space-y-2">
-              <h3 className="text-xl font-semibold text-primary">
+            <div className="inline-block bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-md">
+              <p className="text-lg font-semibold text-primary">
                 We're Selecting 5 Early Collaborators
-              </h3>
-              <p className="text-sm md:text-base text-text-light">
-                We'll choose 5 businesses to receive hands-on AI support before launch. Help us validate what truly matters by sharing your biggest hurdles and feedback.
               </p>
             </div>
           </div>
