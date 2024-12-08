@@ -38,9 +38,14 @@ export const Hero = () => {
             Apply for Early Access
           </Button>
           
-          <p className="text-sm md:text-base text-text-light max-w-2xl mx-auto">
-            <strong className="font-semibold">Launching January 2025</strong>. We'll select 5 businesses for applications.
-          </p>
+          <div className="text-center space-y-2">
+            <p className="text-xl md:text-2xl font-semibold text-primary">
+              Launching January 2025
+            </p>
+            <p className="text-sm md:text-base text-text-light">
+              We'll select 5 businesses for applications.
+            </p>
+          </div>
         </div>
       </div>
     </section>
