@@ -7,7 +7,7 @@ export const Timeline = () => {
     },
     {
       date: "Dec 2024",
-      title: "Select 5 Businesses",
+      title: "We'll Handpick 5 Applicants",
       description: "Begin hands-on refinement with selected organizations"
     },
     {
