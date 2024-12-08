@@ -38,13 +38,18 @@ export const Hero = () => {
             Apply for Early Access
           </Button>
           
-          <div className="text-center space-y-2">
+          <div className="text-center space-y-4">
             <p className="text-xl md:text-2xl font-semibold text-primary">
               Launching January 2025
             </p>
-            <p className="text-sm md:text-base text-text-light">
-              We'll select 5 businesses for applications.
-            </p>
+            <div className="max-w-2xl mx-auto space-y-2">
+              <h3 className="text-xl font-semibold text-primary">
+                We're Selecting 5 Early Collaborators
+              </h3>
+              <p className="text-sm md:text-base text-text-light">
+                We'll choose 5 businesses to receive hands-on AI support before launch. Help us validate what truly matters by sharing your biggest hurdles and feedback.
+              </p>
+            </div>
           </div>
         </div>
       </div>
