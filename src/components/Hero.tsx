@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useState } from "react";
+import { ApplicationForm } from "./ApplicationForm";
 
 export const Hero = () => {
-  const handleJoinWaitlist = () => {
-    toast.success("Thanks for your interest! We'll review your application soon.");
-  };
+  const [showForm, setShowForm] = useState(false);
 
   return (
     <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-4 bg-gradient-to-br from-primary-light via-white to-accent-light animate-gradient-x relative overflow-hidden">
@@ -31,7 +31,7 @@ export const Hero = () => {
         
         <div className="space-y-8">
           <Button
-            onClick={handleJoinWaitlist}
+            onClick={() => setShowForm(true)}
             size="lg"
             className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
@@ -50,6 +50,12 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+
+      <Dialog open={showForm} onOpenChange={setShowForm}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <ApplicationForm onClose={() => setShowForm(false)} />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

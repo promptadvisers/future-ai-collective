@@ -9,7 +9,57 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      applications: {
+        Row: {
+          ai_implementation_status: Database["public"]["Enums"]["ai_status"]
+          company_name: string
+          company_size: Database["public"]["Enums"]["company_size"]
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          industry: Database["public"]["Enums"]["industry_type"]
+          industry_other: string | null
+          job_role: Database["public"]["Enums"]["job_role"]
+          job_role_other: string | null
+          linkedin_url: string
+          motivation: string
+          willing_to_share: boolean
+        }
+        Insert: {
+          ai_implementation_status: Database["public"]["Enums"]["ai_status"]
+          company_name: string
+          company_size: Database["public"]["Enums"]["company_size"]
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          industry: Database["public"]["Enums"]["industry_type"]
+          industry_other?: string | null
+          job_role: Database["public"]["Enums"]["job_role"]
+          job_role_other?: string | null
+          linkedin_url: string
+          motivation: string
+          willing_to_share: boolean
+        }
+        Update: {
+          ai_implementation_status?: Database["public"]["Enums"]["ai_status"]
+          company_name?: string
+          company_size?: Database["public"]["Enums"]["company_size"]
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          industry?: Database["public"]["Enums"]["industry_type"]
+          industry_other?: string | null
+          job_role?: Database["public"]["Enums"]["job_role"]
+          job_role_other?: string | null
+          linkedin_url?: string
+          motivation?: string
+          willing_to_share?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -18,7 +68,30 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      ai_status:
+        | "Yes"
+        | "No, but we plan to within the next 12 months"
+        | "No, but interested in getting started"
+      company_size:
+        | "1-10 employees"
+        | "11-50 employees"
+        | "51-200 employees"
+        | "201-500 employees"
+        | "501+ employees"
+      industry_type:
+        | "Technology"
+        | "Healthcare"
+        | "Finance/Banking"
+        | "E-commerce/Retail"
+        | "Manufacturing"
+        | "Professional Services"
+        | "Other"
+      job_role:
+        | "CEO/Founder/Owner"
+        | "C-Level Executive"
+        | "VP/Director-Level"
+        | "Senior Manager"
+        | "Other"
     }
     CompositeTypes: {
       [_ in never]: never
