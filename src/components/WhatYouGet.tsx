@@ -1,4 +1,4 @@
-import { Check, Target, Users, FileCode, BookOpen, Brain } from "lucide-react";
+import { Check, Target, Users, FileCode, BookOpen, Brain, Network } from "lucide-react";
 
 export const WhatYouGet = () => {
   const benefits = [
@@ -26,6 +26,11 @@ export const WhatYouGet = () => {
       icon: <Brain className="w-8 h-8" />,
       title: "Strategic Peer Insights",
       description: "Connect with forward-thinking CEOs, founders, and decision-makers sharing real-world lessons—not just theory."
+    },
+    {
+      icon: <Network className="w-8 h-8" />,
+      title: "Professional Networking",
+      description: "Build valuable connections with like-minded professionals, fostering collaboration and knowledge sharing in the AI implementation space."
     }
   ];
 
