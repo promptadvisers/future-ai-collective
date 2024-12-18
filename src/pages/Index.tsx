@@ -6,11 +6,15 @@ import { WhatYouGet } from "@/components/WhatYouGet";
 import { StatsSection } from "@/components/StatsSection";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
-import { toast } from "sonner";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ApplicationForm } from "@/components/ApplicationForm";
+import { useState } from "react";
 
 const Index = () => {
+  const [showForm, setShowForm] = useState(false);
+
   const handleJoinWaitlist = () => {
-    toast.success("Thanks for your interest! We'll review your application soon.");
+    setShowForm(true);
   };
 
   const scrollToTop = () => {
@@ -50,6 +54,12 @@ const Index = () => {
       >
         <ArrowUp className="w-6 h-6" />
       </button>
+
+      <Dialog open={showForm} onOpenChange={setShowForm}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <ApplicationForm onClose={() => setShowForm(false)} />
+        </DialogContent>
+      </Dialog>
     </main>
   );
 };
