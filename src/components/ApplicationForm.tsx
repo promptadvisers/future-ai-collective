@@ -118,10 +118,10 @@ export const ApplicationForm = ({ onClose }: { onClose: () => void }) => {
               value={formData.jobRole}
               onValueChange={(value) => setFormData({ ...formData, jobRole: value })}
             >
-              <SelectTrigger>
+              <SelectTrigger className="bg-white">
                 <SelectValue placeholder="Select your role" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white border shadow-lg">
                 <SelectItem value="CEO/Founder/Owner">CEO/Founder/Owner</SelectItem>
                 <SelectItem value="C-Level Executive">C-Level Executive</SelectItem>
                 <SelectItem value="VP/Director-Level">VP/Director-Level</SelectItem>
@@ -158,10 +158,10 @@ export const ApplicationForm = ({ onClose }: { onClose: () => void }) => {
               value={formData.companySize}
               onValueChange={(value) => setFormData({ ...formData, companySize: value })}
             >
-              <SelectTrigger>
+              <SelectTrigger className="bg-white">
                 <SelectValue placeholder="Select company size" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white border shadow-lg">
                 <SelectItem value="1-10 employees">1-10 employees</SelectItem>
                 <SelectItem value="11-50 employees">11-50 employees</SelectItem>
                 <SelectItem value="51-200 employees">51-200 employees</SelectItem>
@@ -178,10 +178,10 @@ export const ApplicationForm = ({ onClose }: { onClose: () => void }) => {
               value={formData.industry}
               onValueChange={(value) => setFormData({ ...formData, industry: value })}
             >
-              <SelectTrigger>
+              <SelectTrigger className="bg-white">
                 <SelectValue placeholder="Select industry" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white border shadow-lg">
                 <SelectItem value="Technology">Technology</SelectItem>
                 <SelectItem value="Healthcare">Healthcare</SelectItem>
                 <SelectItem value="Finance/Banking">Finance/Banking</SelectItem>
