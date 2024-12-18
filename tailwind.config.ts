@@ -49,9 +49,15 @@ export default {
             "background-position": "right center",
           },
         },
+        shimmer: {
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
       },
       animation: {
         "gradient-x": "gradient-x 15s ease infinite",
+        shimmer: "shimmer 2s infinite",
       },
     },
   },

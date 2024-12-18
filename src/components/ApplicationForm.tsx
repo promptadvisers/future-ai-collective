@@ -282,10 +282,21 @@ export const ApplicationForm = ({ onClose }: { onClose: () => void }) => {
         <Button type="button" variant="outline" onClick={onClose}>
           Cancel
         </Button>
-        <Button type="submit" disabled={loading}>
-          {loading ? "Submitting..." : "Submit Application"}
+        <Button 
+          type="submit" 
+          disabled={loading}
+          className="relative bg-primary hover:bg-primary/90 text-white px-8 py-2 rounded-md overflow-hidden"
+        >
+          <span className="relative z-10">
+            {loading ? "Submitting..." : "Submit Application"}
+          </span>
+          <div className="absolute inset-0 w-full h-full">
+            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer"/>
+          </div>
         </Button>
       </div>
     </form>
   );
 };
+
+export default ApplicationForm;
