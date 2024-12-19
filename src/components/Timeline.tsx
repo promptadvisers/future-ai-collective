@@ -24,24 +24,36 @@ export const Timeline = () => {
           Timeline to Launch
         </h3>
         
-        <div className="relative">
+        {/* Mobile view */}
+        <div className="md:hidden space-y-8">
+          {timelineItems.map((item, index) => (
+            <div key={index} className="bg-gradient-to-br from-white to-primary-light/20 p-6 rounded-2xl shadow-lg">
+              <div className="text-primary font-bold mb-2">{item.date}</div>
+              <h4 className="text-xl font-bold text-primary mb-2">{item.title}</h4>
+              <p className="text-text-light">{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop view */}
+        <div className="hidden md:block relative">
           {/* Timeline line */}
-          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary-light to-primary md:transform md:-translate-x-1/2" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary-light to-primary transform -translate-x-1/2" />
           
           {/* Timeline items */}
-          <div className="space-y-16 md:space-y-24">
+          <div className="space-y-24">
             {timelineItems.map((item, index) => (
               <div key={index} className="relative">
-                {/* Date bubble - Updated positioning and sizing for better mobile alignment */}
-                <div className="absolute left-0 md:left-1/2 -translate-x-[12px] md:-translate-x-1/2 transform -translate-y-1/2 w-[40px] h-[40px] md:w-20 md:h-20 bg-white rounded-full border-4 border-primary flex items-center justify-center z-10 shadow-lg">
-                  <span className="text-xs md:text-sm font-bold text-primary whitespace-nowrap px-1">{item.date}</span>
+                {/* Date bubble */}
+                <div className="absolute left-1/2 -translate-x-1/2 transform -translate-y-1/2 w-20 h-20 bg-white rounded-full border-4 border-primary flex items-center justify-center z-10 shadow-lg">
+                  <span className="text-sm font-bold text-primary whitespace-nowrap px-1">{item.date}</span>
                 </div>
                 
-                {/* Content - Adjusted margin for better mobile layout */}
-                <div className={`ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:ml-auto md:pl-8' : 'md:mr-auto md:pr-8'}`}>
-                  <div className="bg-gradient-to-br from-white to-primary-light/20 p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <h4 className="text-xl md:text-2xl font-bold text-primary mb-2 md:mb-3">{item.title}</h4>
-                    <p className="text-base md:text-lg text-text-light">{item.description}</p>
+                {/* Content */}
+                <div className={`w-5/12 ${index % 2 === 0 ? 'ml-auto pl-8' : 'mr-auto pr-8'}`}>
+                  <div className="bg-gradient-to-br from-white to-primary-light/20 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <h4 className="text-2xl font-bold text-primary mb-3">{item.title}</h4>
+                    <p className="text-lg text-text-light">{item.description}</p>
                   </div>
                 </div>
               </div>
