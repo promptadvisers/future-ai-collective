@@ -33,6 +33,40 @@ export const ApplicationForm = ({ onClose }: { onClose: () => void }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate that all required fields are filled
+    const requiredFields = [
+      { field: 'fullName', label: 'Full Name' },
+      { field: 'email', label: 'Email' },
+      { field: 'linkedinUrl', label: 'LinkedIn URL' },
+      { field: 'jobRole', label: 'Job Role' },
+      { field: 'companyName', label: 'Company Name' },
+      { field: 'companySize', label: 'Company Size' },
+      { field: 'industry', label: 'Industry' },
+      { field: 'aiImplementationStatus', label: 'AI Implementation Status' },
+      { field: 'willingToShare', label: 'Willingness to Share' },
+      { field: 'motivation', label: 'Motivation' },
+    ];
+
+    // Check if any required field is empty
+    for (const { field, label } of requiredFields) {
+      if (!formData[field as keyof typeof formData]) {
+        toast.error(`Please fill out the ${label} field`);
+        return;
+      }
+    }
+
+    // Additional validation for "Other" fields
+    if (formData.jobRole === "Other" && !formData.jobRoleOther) {
+      toast.error("Please specify your job role");
+      return;
+    }
+
+    if (formData.industry === "Other" && !formData.industryOther) {
+      toast.error("Please specify your industry");
+      return;
+    }
+
     setLoading(true);
 
     try {
